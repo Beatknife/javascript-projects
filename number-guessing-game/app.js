@@ -8,8 +8,7 @@ let running = true;
 
 while(running) {
 
-    //Check attempts limit, if exceeded restart the g
-    if (attempts > 4){
+    if (attempts > 9){
         alert('YOU USED ALL OF YOUR GUESSES. GAME OVER!');
         running = true;
         attempts = 0;
@@ -28,8 +27,7 @@ while(running) {
     }
     else {
         attempts++;
-
-        //Validate the answer
+        
         if (guess < answer) {
             alert(`TOO LOW! TRY AGAIN!`)
         }
