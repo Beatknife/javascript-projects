@@ -23,6 +23,10 @@ generatePassword.onclick = function (includeLowercase, includeUppercase, include
         allowedChars += lowercaseChars;
     } 
 
+    if (includeUpperCase.checked) {
+        allowedChars += uppercaseChars;
+    } 
+
     console.log(allowedChars);
 
     if(length <= 0){
