@@ -6,7 +6,7 @@ const generatePassword = document.getElementById("generatePassword");
 const newPwdLbl = document.getElementById("newPwdLabel");
 const passwordLengthDisplay = document.getElementById("passwordLengthDisplay");
 
-const passwordLength = 10;
+const passwordLength = 8;
 passwordLengthDisplay.textContent = `Choose an attribute and then click "CREATE PASSWORD" to create a ${passwordLength} digit password.`;
 
 generatePassword.onclick = function(){
