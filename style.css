@@ -24,6 +24,11 @@ h1 {
     text-align: center;
 }
 
+#NewPwdContainer {
+    text-align: center;
+    font-weight: bold;
+}
+
 button {
     color: white;
     background-color:rgb(66, 255, 182);

@@ -3,13 +3,19 @@ const includeUpperCase = document.getElementById("includeUpperCase");
 const includeNumbers = document.getElementById("includeNumbers");
 const includeSymbols = document.getElementById("includeSymbols");
 const generatePassword = document.getElementById("generatePassword");
-const newPwd = document.getElementById("newPwd");
+const newPwdLbl = document.getElementById("newPwdLabel");
 const passwordLengthDisplay = document.getElementById("passwordLengthDisplay");
 
 const passwordLength = 10;
 passwordLengthDisplay.textContent = `Choose an attribute and then click "CREATE PASSWORD" to create a ${passwordLength} digit password.`;
 
-generatePassword.onclick = function (includeLowercase, includeUppercase, includeNumbers, includeSymbols){
+generatePassword.onclick = function(){
+    let generatedPassword = generatePasswordFunc(passwordLength, includeLowerCase, includeUpperCase, includeNumbers, includeSymbols);
+    newPwdLbl.textContent = `Generated Password: ${generatedPassword}`;
+}
+
+
+function generatePasswordFunc(pwdLength, isIncludeLowerCase, isIncludeUpperCase, isIncludeNumbers, isIncludeSymbols){
 
     const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
     const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -19,42 +25,33 @@ generatePassword.onclick = function (includeLowercase, includeUppercase, include
     let allowedChars = "";
     let password = "";
 
-    if (includeLowerCase.checked) {
+    if (isIncludeLowerCase.checked) {
         allowedChars += lowercaseChars;
     } 
 
-    if (includeUpperCase.checked) {
+    if (isIncludeUpperCase.checked) {
         allowedChars += uppercaseChars;
     } 
 
-    if (includeNumbers.checked) {
+    if (isIncludeNumbers.checked) {
         allowedChars += numberChars;
     } 
 
-    console.log(allowedChars);
+    if (isIncludeSymbols.checked) {
+        allowedChars += symbolChars;
+    } 
 
-    if(length <= 0){
+    if(pwdLength < 1){
         return `(password length must be at least 1)`;
     }
     if(allowedChars.length === 0){
         return `(At least 1 set of character needs to be selected)`;
     }
 
-    for(let i = 0; i < length; i++){
+    for(let i = 0; i < pwdLength; i++){
         const randomIndex = Math.floor(Math.random() * allowedChars.length);
         password += allowedChars[randomIndex];
     }
 
     return password;
 }
-
-
-
-
-// const password = generatePassword(passwordLength, 
-//                                  includeLowercase, 
-//                                  includeUppercase, 
-//                                  includeNumbers, 
-//                                  includeSymbols);
-
-// console.log(`Generated password: ${password}`);
