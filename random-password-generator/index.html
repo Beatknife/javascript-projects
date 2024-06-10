@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <h1 id="header1">Random Password Generator</h1>
+   
+    <div id="attributes">
+        <label id="passwordLengthDisplay"></label><br><br>
+        <input type="radio" id="includeLowerCase">
+        <label for="includeLowerCase">Include Lowercase</label><br>
+        <input type="radio" id="includeUpperCase">
+        <label for="includeUpperCase">Include Uppercase</label><br>
+        <input type="radio" id="includeNumbers">
+        <label for="includeNumbers">Include Numbers</label><br>
+        <input type="radio" id="includeSymbols">
+        <label for="includeSymbols">Include Symbols</label><br>
+    </div>
+
+    <div id="BtnContainer">
+        <button id="generatePassword">CREATE PASSWORD</button><br>
+    </div><br>
+
+    <div id="NewPwdContainer">
+        <label id="newPwdLabel"></label>
+    </div>
+
+</body>
+</html>
