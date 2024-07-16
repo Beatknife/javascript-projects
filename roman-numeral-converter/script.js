@@ -3,27 +3,30 @@ const convertBtn = document.getElementById("convert-btn");
 const output = document.getElementById("output");
 
 convertBtn.addEventListener("click", () => {
-    if (input.value === "") {
+    convertToRomanian(input.value);
+})
+
+function convertToRomanian(number) {
+    if (number === "") {
         output.style.display = "block";
         output.style.backgroundColor = "#be2929"
         output.textContent = "Please enter a valid number";
+        return;
     }
 
-    if (input.value <= 0) {
+    if (number <= 0) {
         output.style.display = "block";
         output.style.backgroundColor = "#be2929"
         output.textContent = "Please enter a number greater than or equal to 1";
+        return;
     }
 
-    if (input.value >= 4000) {
+    if (number >= 4000) {
         output.style.display = "block";
         output.style.backgroundColor = "#be2929"
         output.textContent = "Please enter a number less than or equal to 3999";
+        return;
     }
-    convertToRomanian();
-})
 
-function convertToRomanian() {
-    output.style.display = "block";
-    output.style.backgroundColor = "#6165ad";
+    
 }
